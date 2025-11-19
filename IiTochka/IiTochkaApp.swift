@@ -12,6 +12,7 @@ struct IiTochkaApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .background(Color.black)
         }
     }
 }

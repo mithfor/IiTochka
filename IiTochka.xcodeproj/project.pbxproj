@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		8804B6572ECE02D300D2E1DC /* IiTochka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IiTochka.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8804B6572ECE02D300D2E1DC /* IiTochka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = IiTochka.app; path = "/Users/dmitriivoronin/Develop/Tests/IiTochka/build/Debug-iphoneos/IiTochka.app"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -33,16 +33,7 @@
 			isa = PBXGroup;
 			children = (
 				8804B6592ECE02D300D2E1DC /* IiTochka */,
-				8804B6582ECE02D300D2E1DC /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		8804B6582ECE02D300D2E1DC /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8804B6572ECE02D300D2E1DC /* IiTochka.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,7 +86,7 @@
 			mainGroup = 8804B64E2ECE02D300D2E1DC;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 8804B6582ECE02D300D2E1DC /* Products */;
+			productRefGroup = 8804B64E2ECE02D300D2E1DC;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
