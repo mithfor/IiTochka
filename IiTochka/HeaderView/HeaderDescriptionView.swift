@@ -16,19 +16,21 @@ struct HeaderDescriptionView: View {
     var userName: String
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 15) {
+        VStack(alignment: .leading, spacing: 5) {
             HStack(alignment: .top, spacing: 5) {
                 Text(userName)
-                    .font(.system(size: 11, weight: .medium))
+                    .font(.system(size: 14, weight: .medium))
+                    .foregroundStyle(Color.white)
                 Image(systemName: imageName)
                     .renderingMode(.template)
-                    .foregroundColor(.blue)
+                    .foregroundStyle(tintColor)
                     .frame(width: 14, height: 14)
             }
             
             Text(description)
-                .lineLimit(3)
+                .lineLimit(5)
                 .foregroundStyle(Color.white)
+                .font(.system(size: 12, weight: .regular))
         }
     }
 }

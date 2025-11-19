@@ -13,6 +13,7 @@ struct IiTochkaApp: App {
         WindowGroup {
             ContentView()
                 .background(Color.black)
+                .ignoresSafeArea()
         }
     }
 }
