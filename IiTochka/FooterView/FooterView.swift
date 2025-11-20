@@ -12,34 +12,48 @@ struct FooterView: View {
         HStack(alignment: .top, spacing: 6) {
             HStack {
                 Image(.mappin)
-                    .frame(width: 14, height: 14)
+                    .footerStyle()
                 Text("Россия, Сочи")
-                    .font(.system(size: 12, weight: .medium))
-                    .foregroundStyle(Color.white)
+                    .footerTextStyle()
             }
             Spacer()
             HStack {
                 Image(systemName: "eye")
-                    .renderingMode(.template)
-                    .foregroundStyle(.white)
-                    .frame(width: 14, height: 14)
+                    .footerStyle()
                 Text("567")
-                    .font(.system(size: 12, weight: .medium))
-                    .foregroundStyle(Color.white)
-                    
+                    .footerTextStyle()
             }
             
             HStack {
                 Image(systemName: "heart")
-                    .renderingMode(.template)
-                    .foregroundStyle(.white)
-                    .frame(width: 14, height: 14)
+                    .footerStyle()
+                    
                 Text("1.5k")
-                    .font(.system(size: 12, weight: .medium))
-                    .foregroundStyle(Color.white)
+                    .footerTextStyle()
             }
         }
     }
 }
 
- 
+struct FooterViewTextStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .font(.system(size: 12, weight: .medium))
+            .foregroundStyle(Color.white)
+    }
+}
+
+extension View {
+    func footerTextStyle() -> some View {
+        modifier(FooterViewTextStyle())
+    }
+}
+
+extension Image {
+    func footerStyle() -> some View {
+        self
+            .renderingMode(.template)
+            .foregroundStyle(.white)
+            .frame(width: 14, height: 14)
+    }
+}
