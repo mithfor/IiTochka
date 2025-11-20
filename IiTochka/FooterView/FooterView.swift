@@ -6,31 +6,59 @@
 //
 
 import SwiftUI
+import Combine
+
+
+
+
 
 struct FooterView: View {
+    
+    @StateObject private var viewModel: FooterViewModel
+    
+    init(viewModel: FooterViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
+    
+    init(factory: FooterViewModelFactory, location: String, views: String, hearts: String) {
+        self.init(viewModel: factory.makeFooterViewModel(location: location, views: views, hearts: hearts))
+    }
+    
     var body: some View {
         HStack(alignment: .top, spacing: 6) {
-            HStack {
-                Image(.mappin)
-                    .footerStyle()
-                Text("Россия, Сочи")
-                    .footerTextStyle()
-            }
+           locationView
             Spacer()
-            HStack {
-                Image(systemName: "eye")
-                    .footerStyle()
-                Text("567")
-                    .footerTextStyle()
-            }
-            
-            HStack {
-                Image(systemName: "heart")
-                    .footerStyle()
-                    
-                Text("1.5k")
-                    .footerTextStyle()
-            }
+
+            viewsView
+            heartsView
+        }
+    }
+    
+    private var locationView: some View {
+        HStack {
+            Image(.mappin)
+                .footerStyle()
+            Text(viewModel.location)
+                .footerTextStyle()
+        }
+    }
+    
+    private var viewsView: some View {
+        HStack {
+            Image(systemName: "eye")
+                .footerStyle()
+            Text(viewModel.views)
+                .footerTextStyle()
+        }
+    }
+    
+    private var heartsView: some View {
+        HStack {
+            Image(systemName: "heart")
+                .footerStyle()
+                
+            Text(viewModel.hearts)
+                .footerTextStyle()
         }
     }
 }
@@ -56,4 +84,11 @@ extension Image {
             .foregroundStyle(.white)
             .frame(width: 14, height: 14)
     }
+}
+
+#Preview {
+    let factory = DefaultFooterViewModelFactory()
+    return FooterView(factory: factory,
+                      location: "Penza",
+                      views: "14", hearts: "1B")
 }

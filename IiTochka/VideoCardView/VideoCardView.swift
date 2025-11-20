@@ -11,6 +11,11 @@ struct VideoCardView: View {
     
     let configuration: Configuration
     
+    let footerViewModel = DefaultFooterViewModelFactory()
+        .makeFooterViewModel(location: "Penza, Russia",
+                             views: "144",
+                             hearts: "1B")
+    
     init(configuration: Configuration = .default) {
         self.configuration = configuration
     }
@@ -43,7 +48,7 @@ struct VideoCardView: View {
                 Spacer()
                 TagsViewContainer()
                     .padding(.horizontal)
-                FooterView()
+                FooterView(viewModel: footerViewModel)
                     .padding(.horizontal)
                     .padding(.bottom)
             }
