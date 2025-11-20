@@ -12,14 +12,10 @@ struct ContentView: View {
     var body: some View {
         ScrollView(.vertical) {
             VideoCardView()
-                .clipShape(.rect(cornerRadius: 10))
-                .overlay(RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.black, lineWidth: 2))
-                .padding(.all)
+            VideoCardView()
+            VideoCardView()
         }
         .background(Color.black)
-
-        
     }
 }
 
