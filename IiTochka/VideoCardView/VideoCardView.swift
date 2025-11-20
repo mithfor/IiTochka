@@ -20,8 +20,11 @@ struct VideoCardView: View {
                 HeaderView()
                     .padding()
                 Spacer()
+                TagsViewContainer()
+                    .padding(.horizontal)
                 FooterView()
-                    .padding()
+                    .padding(.horizontal)
+                    .padding(.bottom)
             }
         }
         .background(Color.black)
