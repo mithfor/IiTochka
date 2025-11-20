@@ -8,13 +8,34 @@
 import SwiftUI
 
 struct VideoCardView: View {
+    
+    let configuration: Configuration
+    
+    init(configuration: Configuration = .default) {
+        self.configuration = configuration
+    }
+    
+    struct Configuration {
+        let cornerRadius: CGFloat
+        let borderWidth: CGFloat
+        let borderColor: Color
+        let backgroundColor: Color
+        
+        static let `default` = Configuration(
+            cornerRadius: 10,
+            borderWidth: 2,
+            borderColor: .black,
+            backgroundColor: .black
+        )
+    }
+
     var body: some View {
 
         ZStack {
             VideoCardBackgroundView()
-                .clipShape(.rect(cornerRadius: 10))
-                .overlay(RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.black, lineWidth: 2))
+                .clipShape(.rect(cornerRadius: configuration.cornerRadius))
+                .overlay(RoundedRectangle(cornerRadius: configuration.cornerRadius)
+                    .stroke(configuration.borderColor, lineWidth: configuration.borderWidth))
             
             VStack {
                 HeaderView()
@@ -27,7 +48,7 @@ struct VideoCardView: View {
                     .padding(.bottom)
             }
         }
-        .background(Color.black)
+        .background(configuration.backgroundColor)
         .padding(.top)
     }
 }

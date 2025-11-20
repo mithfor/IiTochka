@@ -90,7 +90,7 @@ struct TagsViewContainer: View {
     
     var body: some View {
         
-        // Multitag sellection
+        // Multitag selection
 //        TagsView(tags: $tags) { tag in
 //            handleTagTap(tag)
 //        }
