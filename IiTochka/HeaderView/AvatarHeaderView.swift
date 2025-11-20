@@ -6,11 +6,10 @@
 //
 
 import SwiftUI
-import UIKit
 
 struct AvatarHeaderView: View {
     
-    @Binding var avatarStatus: String
+    var avatarStatus: String
     var avatarImage: Image
     
     var body: some View {
