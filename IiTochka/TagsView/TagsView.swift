@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct TagViewItem: Hashable, Identifiable {
     
@@ -80,34 +81,4 @@ struct TagsView: View {
     }
 }
 
-struct TagsViewContainer: View {
-    
-    @State var tags: [TagViewItem] = [
-        TagViewItem(title: "#Португалия", isSelected: false),
-        TagViewItem(title: "#Природа", isSelected: false),
-        TagViewItem(title: "#Лето", isSelected: false),
-    ]
-    
-    var body: some View {
-        
-        // Multitag selection
-//        TagsView(tags: $tags) { tag in
-//            handleTagTap(tag)
-//        }
-        
-        // No tag selection
-        TagsView(tags: $tags)
-    }
-    
-    private func handleTagTap(_ tag: TagViewItem) {
-        if let index = tags.firstIndex(where: { $0.id == tag.id}) {
-            tags[index].isSelected.toggle()
-        }
-    }
-}
 
-#Preview {
-    TagsViewContainer()
-        .padding()
-        .background(Color.gray.opacity(0.1))
-}

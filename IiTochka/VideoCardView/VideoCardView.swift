@@ -15,6 +15,8 @@ struct VideoCardView: View {
         .makeFooterViewModel(location: "Penza, Russia",
                              views: "144",
                              hearts: "1B")
+    let tagsViewModel = DefaultTagsViewModelFactory()
+        .makeTagsViewModel(tags: TagsViewModel.defaultTags)
     
     init(configuration: Configuration = .default) {
         self.configuration = configuration
@@ -46,7 +48,7 @@ struct VideoCardView: View {
                 HeaderView()
                     .padding()
                 Spacer()
-                TagsViewContainer()
+                TagsViewContainer(viewModel: tagsViewModel)
                     .padding(.horizontal)
                 FooterView(viewModel: footerViewModel)
                     .padding(.horizontal)
