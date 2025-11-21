@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		888FC3692ED0470700C84671 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8804B64F2ECE02D300D2E1DC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8804B6562ECE02D300D2E1DC;
+			remoteInfo = IiTochka;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		888FC2D42ECEE56800C84671 /* IiTochka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IiTochka.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		888FC3652ED0470700C84671 /* IiTochkaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IiTochkaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +27,22 @@
 			path = IiTochka;
 			sourceTree = "<group>";
 		};
+		888FC3662ED0470700C84671 /* IiTochkaTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = IiTochkaTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		8804B6542ECE02D300D2E1DC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		888FC3622ED0470700C84671 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -34,6 +57,8 @@
 			children = (
 				8804B6592ECE02D300D2E1DC /* IiTochka */,
 				888FC2D42ECEE56800C84671 /* IiTochka.app */,
+				888FC3652ED0470700C84671 /* IiTochkaTests.xctest */,
+				888FC3662ED0470700C84671 /* IiTochkaTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +87,29 @@
 			productReference = 888FC2D42ECEE56800C84671 /* IiTochka.app */;
 			productType = "com.apple.product-type.application";
 		};
+		888FC3642ED0470700C84671 /* IiTochkaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 888FC36B2ED0470700C84671 /* Build configuration list for PBXNativeTarget "IiTochkaTests" */;
+			buildPhases = (
+				888FC3612ED0470700C84671 /* Sources */,
+				888FC3622ED0470700C84671 /* Frameworks */,
+				888FC3632ED0470700C84671 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				888FC36A2ED0470700C84671 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				888FC3662ED0470700C84671 /* IiTochkaTests */,
+			);
+			name = IiTochkaTests;
+			packageProductDependencies = (
+			);
+			productName = IiTochkaTests;
+			productReference = 888FC3652ED0470700C84671 /* IiTochkaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -74,6 +122,10 @@
 				TargetAttributes = {
 					8804B6562ECE02D300D2E1DC = {
 						CreatedOnToolsVersion = 26.0.1;
+					};
+					888FC3642ED0470700C84671 = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = 8804B6562ECE02D300D2E1DC;
 					};
 				};
 			};
@@ -92,12 +144,20 @@
 			projectRoot = "";
 			targets = (
 				8804B6562ECE02D300D2E1DC /* IiTochka */,
+				888FC3642ED0470700C84671 /* IiTochkaTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8804B6552ECE02D300D2E1DC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		888FC3632ED0470700C84671 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -114,7 +174,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		888FC3612ED0470700C84671 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		888FC36A2ED0470700C84671 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8804B6562ECE02D300D2E1DC /* IiTochka */;
+			targetProxy = 888FC3692ED0470700C84671 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8804B6602ECE02D600D2E1DC /* Debug */ = {
@@ -262,6 +337,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.mithfordev.IiTochka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -295,12 +373,59 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.mithfordev.IiTochka;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		888FC36C2ED0470700C84671 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56U6P9HNQ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.mithfordev.IiTochkaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IiTochka.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IiTochka";
+			};
+			name = Debug;
+		};
+		888FC36D2ED0470700C84671 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 56U6P9HNQ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.mithfordev.IiTochkaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IiTochka.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IiTochka";
 			};
 			name = Release;
 		};
@@ -321,6 +446,15 @@
 			buildConfigurations = (
 				8804B6632ECE02D600D2E1DC /* Debug */,
 				8804B6642ECE02D600D2E1DC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		888FC36B2ED0470700C84671 /* Build configuration list for PBXNativeTarget "IiTochkaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				888FC36C2ED0470700C84671 /* Debug */,
+				888FC36D2ED0470700C84671 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
