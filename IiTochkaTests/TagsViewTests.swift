@@ -27,9 +27,27 @@ class TagsViewTests: XCTestCase {
         // Given
         
         // When
-        let viewModel = TagsViewModel(tags: [])
+        let viewModel = TagsViewModel()
         
         // Then
         XCTAssertTrue(viewModel.tags.isEmpty)
     }
+    
+    func testViewModel_InitializationWithSomeTagItems() async {
+        // Given
+        let tag1 = TagViewItem(title: "test1", isSelected: false)
+        let tag2 = TagViewItem(title: "test2", isSelected: false)
+        
+        let tags: [TagViewItem] = [tag1, tag2]
+        
+        // When
+        let viewModel = TagsViewModel(tags: tags)
+        
+        // Then
+        XCTAssertEqual(viewModel.tags.count, 2)
+        XCTAssertEqual(viewModel.tags[0], tag1)
+        XCTAssertEqual(viewModel.tags[1], tag2)
+    }
+    
+    // TODO: - Test factory
 }

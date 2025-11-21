@@ -10,9 +10,9 @@ import Combine
 
 final class TagsViewModel: ObservableObject {
     
-    @Published var tags: [TagViewItem] = []
+    @Published var tags: [TagViewItem]
     
-    init(tags: [TagViewItem]) {
+    init(tags: [TagViewItem] = []) {
         self.tags = tags
     }
     
@@ -23,6 +23,7 @@ final class TagsViewModel: ObservableObject {
         TagViewItem(title: "#Лето", isSelected: false),
     ]
     
+    // TODO: - Add tag tapping functionality
 }
 
 
