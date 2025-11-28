@@ -10,12 +10,31 @@ import Combine
 
 struct ContentView: View {
     var body: some View {
-        ScrollView(.vertical) {
-            VideoCardView()
-            VideoCardView()
-            VideoCardView()
+        
+        // TODO: - Apply identifiable VideoCardsViewModel here
+        @State var videoCards = [1,2,3,4,5]
+        NavigationView {
+            ZStack {
+                
+                Color.black
+                    .ignoresSafeArea()
+                
+                ScrollView() {
+                    LazyVStack (spacing: 12) {
+                        ForEach(videoCards, id: \.self) { card in
+                            
+                            // TODO: - Extract to Navigation View
+                            NavigationLink(destination: DetailsVideoCardView(videoCardNumber: card)) {
+                                VideoCardView()
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                        }
+                    }
+                    .padding(.leading)
+                    .padding(.trailing)
+                }
+            }
         }
-        .background(Color.black)
     }
 }
 

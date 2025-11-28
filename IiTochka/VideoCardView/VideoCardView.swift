@@ -11,13 +11,17 @@ struct VideoCardView: View {
     
     let configuration: Configuration
     
+    // TODO: - Use VideoCardViewModel DI
     let headerViewModel = DefaultHeaderViewModelFactory()
         .makeHeaderViewModel()
     
+    // TODO: - Use VideoCardViewModel DI
     let footerViewModel = DefaultFooterViewModelFactory()
         .makeFooterViewModel(location: "Penza, Russia",
                              views: "144",
                              hearts: "1B")
+    
+    // TODO: - Use VideoCardViewModel DI
     let tagsViewModel = DefaultTagsViewModelFactory()
         .makeTagsViewModel(tags: TagsViewModel.defaultTags)
     
