@@ -50,4 +50,25 @@ class TagsViewTests: XCTestCase {
     }
     
     // TODO: - Test factory
+    func testDefaultTagViewFactory_CreatesViewModel() async {
+        // Given
+        let factory = DefaultTagsViewModelFactory()
+        var tags = Helper.tags
+
+        
+        // When
+        let viewModel = await MainActor.run { factory.makeTagsViewModel(tags: tags)
+        }
+        
+        // Then
+        XCTAssertEqual(viewModel.tags.count, tags.count)
+        XCTAssertEqual(viewModel.tags[0], tags[0])
+        XCTAssertTrue(type(of: viewModel) == TagsViewModel.self)
+    }
+}
+
+struct Helper {
+    static let tags: [TagViewItem] = [
+        TagViewItem(title: "test1", isSelected: false),
+        TagViewItem(title: "test2", isSelected: false)]
 }
