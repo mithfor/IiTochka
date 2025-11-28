@@ -11,6 +11,9 @@ struct VideoCardView: View {
     
     let configuration: Configuration
     
+    let headerViewModel = DefaultHeaderViewModelFactory()
+        .makeHeaderViewModel()
+    
     let footerViewModel = DefaultFooterViewModelFactory()
         .makeFooterViewModel(location: "Penza, Russia",
                              views: "144",
@@ -45,7 +48,7 @@ struct VideoCardView: View {
                     .stroke(configuration.borderColor, lineWidth: configuration.borderWidth))
             
             VStack {
-                HeaderView()
+                HeaderView(viewModel: headerViewModel)
                     .padding()
                 Spacer()
                 TagsViewContainer(viewModel: tagsViewModel)

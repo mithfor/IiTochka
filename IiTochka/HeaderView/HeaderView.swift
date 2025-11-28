@@ -16,7 +16,7 @@ struct HeaderView: View {
     var body: some View {
         HStack(alignment: .top, spacing: 16) {
             AvatarHeaderView(avatarStatus: viewModel.avatarStatus,
-                             avatarImage: Image(.mockAvatar))
+                             avatarImage: viewModel.avatarImage)
             
             HeaderDescriptionView(imageName: viewModel.userDescriptionStatus.imageName,
                                   tintColor: Color.red,
